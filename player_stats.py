@@ -7,3 +7,7 @@ df = log.get_data_frames()[0]
 
 print(player["full_name"], "- last 10 games")
 print(df[["GAME_DATE", "MATCHUP", "PTS", "REB", "AST"]].head(10))
+
+avg = df[["PTS", "REB", "AST"]].head(10).mean().round(1)
+print("\nLast 10 game averages:")
+print(avg.to_string())
